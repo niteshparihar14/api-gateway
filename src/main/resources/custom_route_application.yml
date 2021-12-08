@@ -1,0 +1,15 @@
+server:
+  port: 8080
+  
+spring:  application:    name: gate-way  cloud:    gateway:
+      routes:      - id: sample-service
+        uri: http://localhost:3038        predicates:        - Path=/message      - id: driver-service
+        uri: lb://DRIVER-SERVICE
+        predicates:
+        - Path=/api/v1/**
+    
+
+management:  endpoints:    web:      exposure:        include:        - "*"      
+
+eureka:  client:    service-url:      defaultZone: http://localhost:8761/eureka    
+        

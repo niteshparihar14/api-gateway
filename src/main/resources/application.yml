@@ -1,0 +1,22 @@
+server:
+  port: 8080
+  
+spring:  application:    name: gate-way  cloud:    gateway:
+      discovery:        locator:          enabled: true
+          lower-case-service-id: true
+#      routes:#      - id: sample-service
+#        uri: http://localhost:3038#        predicates:#        - Path=/message  datasource:
+    url: jdbc:mysql://localhost:3306/customer
+    username: root
+    password: srivatsan
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+management:  endpoints:    web:      exposure:        include:        - "*"      
+
+eureka:  client:    service-url:      defaultZone: http://localhost:8761/eureka    
+        
