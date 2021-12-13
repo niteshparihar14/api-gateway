@@ -8,7 +8,7 @@ spring:  application:    name: gate-way  cloud:    gateway:
 #        uri: http://localhost:3038#        predicates:#        - Path=/message  datasource:
     url: jdbc:mysql://localhost:3306/customer
     username: root
-    password: srivatsan
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
     
   jpa:
